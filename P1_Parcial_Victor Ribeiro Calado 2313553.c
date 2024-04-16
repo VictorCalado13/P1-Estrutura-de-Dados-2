@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #define MAX_N 100
 
-//Inclus„o da FunÁ„o InsertionSort
+//Inclus√£o da Fun√ß√£o InsertionSort
 
 void insertionSort(int arr[], int n, int* trocas, int* comparacoes) {
     int i, key, j;
@@ -18,7 +18,7 @@ void insertionSort(int arr[], int n, int* trocas, int* comparacoes) {
         
         while (j >= 0 && arr[j] > key) {
         	
-        	//IncrementaÁ„o das trocas e as comparacoes
+        	//Incrementa√ß√£o das trocas e as comparacoes
         	(*trocas)++;
         	(*comparacoes)++;
         	
@@ -30,7 +30,7 @@ void insertionSort(int arr[], int n, int* trocas, int* comparacoes) {
     }
 }//OK
 
-//Inclus„o da FunÁ„o SelectionSort
+//Inclus√£o da Fun√ß√£o SelectionSort
 
 void selectionSort(int arr[], int n, int* trocas, int* comparacoes) {
 	
@@ -40,7 +40,7 @@ void selectionSort(int arr[], int n, int* trocas, int* comparacoes) {
         
         for (j = i+1; j < n; j++) {
         	
-        	//IncrementaÁ„o das comparaÁıes
+        	//Incrementa√ß√£o das compara√ß√µes
             (*comparacoes)++;
             
             if (arr[j] < arr[min_idx])
@@ -49,7 +49,7 @@ void selectionSort(int arr[], int n, int* trocas, int* comparacoes) {
         }
         if (min_idx != i) {
         	
-        	//IncrementaÁ„o das trocas
+        	//Incrementa√ß√£o das trocas
         	(*trocas)++;
         	
             printf("Trocou: %d com %d\n", arr[i], arr[min_idx]);
@@ -61,18 +61,16 @@ void selectionSort(int arr[], int n, int* trocas, int* comparacoes) {
 }//OK
 
 
-
-
 int main() {
-    int N;
-    int vecA[MAX_N] = {0}; 
-	int vecB[MAX_N] = {0};
+    int tamconju;
+    int vectA[MAX_N] = {0}; 
+	int vectB[MAX_N] = {0};
     
     printf("Informe o tamanho dos conjuntos:");
-    scanf("%d", &N);
+    scanf("%d", &tamconju);// Armazena no endere√ßo de N
     
 //Se o valor for 0 algoritmo vai parar
-	if (N ==0){
+	if (tamconju ==0){
 		printf("Valor primario e zero, encerrando o software.\n");
 		return 0;
 	}//OK
@@ -80,45 +78,45 @@ int main() {
     int posA = 0, posB = 0;
     int i;
     
-    for ( i = 0; i < N * 2; i++) {
+    for ( i = 0; i < tamconju * 2; i++) {
         int num;
         char set;
         
 	printf("Informe um numero seguido do conjunto A ou B:");
 	scanf("%d %c", &num, &set);
         
+        //Reconhecimento de A ou B
         if (set == 'A') { 
-            if (posA < N) {
-                vecA[posA++] = num;
+            if (posA < tamconju) {//Reconhecimento se A esta cheio
+                vectA[posA++] = num;//Inclus√£o de indice 
             } else {
-                printf("Tamanho do conjunto A excedido.\n");
-                return 1;
+                printf("Tamanho do conjunto A cheio.\n");
+                return 1;//Encerramento do software com erro
 		}
         } else if (set == 'B') {
-            if (posB < N) {
-                vecB[posB++] 
-				= num;
+            if (posB < tamconju) {//Reconhecimento se B esta cheio
+                vectB[posB++] = num;//Inclus√£o de indice
             } else {
-                printf("Tamanho do conjunto B excedido.\n");
-                return 1;
+                printf("Tamanho do conjunto B cheio.\n");
+                return 1;//Encerramento do software com erro
 		}
         } else {
             printf("Conjunto invalido.\n");
-            return 1;
+            return 1;//Encerramento do software com erro
         }
     }//OK
    
 //Print do Conjunto A    
     printf("Conjunto A:");
     	for (i = 0; i < posA; i++) {
-        printf("%d ", vecA[i]);
+        printf("%d ", vectA[i]);
     }//OK
     
     printf("\n");
 //Print do Conjunto B    
     printf("Conjunto B:");
     	for ( i = 0; i < posB; i++) {
-        printf("%d ", vecB[i]);
+        printf("%d ", vectB[i]);
     }//OK
 	
 	    
@@ -128,15 +126,15 @@ int main() {
 
 	int trocas = 0, comparacoes = 0;
     printf("\nInsertionSort\n");
-    insertionSort(vecA, posA, &trocas, &comparacoes);
-    printf("InsetionSort:trocas:%d  ComparaÁoes:%d\n", trocas, comparacoes);
+    insertionSort(vectA, posA, &trocas, &comparacoes);
+    printf("InsetionSort:trocas:%d  Comparacoes:%d\n", trocas, comparacoes);
     //OK
     
 //Print do SelectionSort/ trocas e comparacoes
 	
 	trocas = 0, comparacoes = 0;
     printf("\nSelectionSort\n");
-    selectionSort(vecB, posB, &trocas, &comparacoes);
+    selectionSort(vectB, posB, &trocas, &comparacoes);
     printf("SelectionSort: trocas:%d  Comparacoes:%d\n", trocas, comparacoes);
     //OK
     
