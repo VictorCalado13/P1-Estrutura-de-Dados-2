@@ -1,4 +1,5 @@
-Questão
+P1- 16/04/2024
+
 a) O programa deve ler uma entrada que tem o seguinte formato: primeira linha o
 tamanho do vetor (N>0); as linhas seguintes informarão um número inteiro e em
 seguida o conjunto ao qual pertencem (A ou B). Como sugestão, cada conjunto
