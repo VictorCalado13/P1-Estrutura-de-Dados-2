@@ -1,8 +1,8 @@
 //Victor Ribeiro Calado
 //RA 2313553
 
-//				  P1 Entrega FINAL - Estrutura de Dados 2
-//                 Prof Fabio Fernandes Da Rocha Vicente
+//		P1 Entrega FINAL - Estrutura de Dados 2
+//               Prof Fabio Fernandes Da Rocha Vicente
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -104,39 +104,40 @@ int main() {
             printf("Conjunto invalido.\n");
             return 1;//Encerramento do software com erro
         }
-    }//OK
+}//OK
    
 //Print do Conjunto A    
     printf("Conjunto A:");
-    	for (i = 0; i < posA; i++) {
-        printf("%d ", vectA[i]);
-    }//OK
+    for (i = 0; i < posA; i++) {
+    printf("%d ", vectA[i]);
+}//OK
     
     printf("\n");
+	
 //Print do Conjunto B    
     printf("Conjunto B:");
-    	for ( i = 0; i < posB; i++) {
-        printf("%d ", vectB[i]);
-    }//OK
+    for ( i = 0; i < posB; i++) {
+    printf("%d ", vectB[i]);
+}//OK
 	
 	    
-    printf("\n");
+printf("\n");
     
 //Print do InsertionSort/ trocas e comparacoes
 
-	int trocas = 0, comparacoes = 0;
-    printf("\nInsertionSort\n");
-    insertionSort(vectA, posA, &trocas, &comparacoes);
-    printf("InsetionSort:trocas:%d  Comparacoes:%d\n", trocas, comparacoes);
-    //OK
+int trocas = 0, comparacoes = 0;
+printf("\nInsertionSort\n");
+insertionSort(vectA, posA, &trocas, &comparacoes);
+printf("InsetionSort:trocas:%d  Comparacoes:%d\n", trocas, comparacoes);
+//OK
     
 //Print do SelectionSort/ trocas e comparacoes
 	
-	trocas = 0, comparacoes = 0;
-    printf("\nSelectionSort\n");
-    selectionSort(vectB, posB, &trocas, &comparacoes);
-    printf("SelectionSort: trocas:%d  Comparacoes:%d\n", trocas, comparacoes);
-    //OK
+trocas = 0, comparacoes = 0;
+printf("\nSelectionSort\n");
+selectionSort(vectB, posB, &trocas, &comparacoes);
+printf("SelectionSort: trocas:%d  Comparacoes:%d\n", trocas, comparacoes);
+//OK
     
     return 0;
 }
